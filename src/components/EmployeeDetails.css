@@ -1,0 +1,139 @@
+/* EmployeeDetail.css */
+.employee-detail-page {
+  padding: 30px;
+  font-family: 'Roboto', sans-serif;
+  color: #555;
+  height: 100vh;
+  display: flex;
+  justify-content: center; /* Center align the content horizontally */
+  align-items: center; /* Center align the content vertically */
+  position: relative;
+  overflow: hidden; /* Prevent content overflow */
+  flex-direction: column; /* Stack the elements vertically (card + button) */
+}
+
+.video-background {
+  position: fixed; /* Ensure the background image stays fixed */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Place the background image behind the content */
+}
+
+.video-background img {
+  object-fit: cover; /* Ensure the image covers the entire screen */
+  width: 100%;
+  height: 100%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark semi-transparent overlay */
+  z-index: 1; /* Overlay above the background image */
+}
+
+.employee-card {
+  display: flex;
+  flex-direction: column; /* Card elements stay vertically stacked */
+  align-items: center; /* Center align items horizontally */
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+  backdrop-filter: blur(8px); /* Glass effect */
+  padding: 15px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Light border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2; /* Ensure the card content is above the overlay */
+  max-width: 600px; /* Limit the maximum width of the card */
+  width: 100%;
+  margin-bottom: 15px; /* Reduced space between card and button */
+  height: auto; /* Adjust card height based on content */
+  max-height: 450px; /* Set a max height to prevent it from becoming too tall */
+  overflow: hidden; /* Prevent overflow if content is too large */
+}
+
+.employee-img {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #f0f4f8;
+  margin-bottom: 15px; /* Reduced space below image */
+}
+
+.employee-info {
+  flex: 1;
+  padding-left: 15px;
+  text-align: center; /* Center text in the employee info section */
+}
+
+.employee-info h2 {
+  font-size: 1.8rem;
+  color: #fff; /* White text color */
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.employee-info p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 8px 0;
+  color: #f0f4f8; /* Light text color */
+}
+
+.employee-info p strong {
+  color: #fff; /* White color for strong text */
+}
+
+.back-btn {
+  padding: 10px 20px;
+  background-color: #5a6d8d;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #4b5d70;
+}
+
+.back-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(86, 138, 187, 0.5);
+}
+
+@media (max-width: 768px) {
+  .employee-card {
+    padding: 15px;
+  }
+
+  .employee-img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .employee-info h2 {
+    font-size: 1.6rem;
+  }
+
+  .employee-info p {
+    font-size: 1rem;
+  }
+
+  .back-btn {
+    margin-top: 15px;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}
