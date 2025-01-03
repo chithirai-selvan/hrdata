@@ -1,0 +1,24 @@
+# Define the stages
+stages:
+  - build
+  - deploy
+
+# Job for building the React app
+build:
+  image: node:14  # Use Node.js Docker image to build
+  stage: build    # This is the build stage
+  script:
+    - npm install  # Install dependencies
+    - npm run build # Build the app
+  artifacts:
+    paths:
+      - build/ # Save build output to be used in the next stage
+
+# Job for deploying the app
+deploy:
+  stage: deploy   # This is the deploy stage
+  script:
+    - echo "Deploying app..."  # This could be an actual deployment script
+    - rsync -avz build/ user@your_server:/path/to/deploy/ # Example deployment using rsync
+  only:
+    - master  # Deploy only when changes are pushed to the master branch
